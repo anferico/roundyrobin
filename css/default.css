@@ -1,0 +1,176 @@
+﻿
+#gameArea {
+    background: url(/images/autumn.jpg);
+    background-size: cover;
+    height: 100%;
+
+    z-index: 1;
+}
+
+#score {
+    position: fixed; /* Posizione relativa alla finestra del browser */
+
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Per centrare */
+    font-size: 120px;
+    font-family: Impact;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; /* horizontal, vertical, color */
+
+    z-index: 4;
+}
+
+#hand {
+    position: fixed;
+
+    width: 5vw;
+    height: auto;
+    top: 53%;
+    left: 53%;
+    animation: tapAnimation .4s infinite alternate;
+
+    z-index: 3;
+}
+@keyframes tapAnimation {
+    0% {
+        top: 53%;
+        left: 53%;
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+#tipText {
+    position: fixed;
+
+    font-size: 50px;
+    font-family: Segoe WP;
+    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 0%); /* Per centrare */
+
+    z-index: 3;
+}
+
+#gameOverDialog {
+    position: fixed;
+    visibility: collapse; /* Visibile al termine della partita */
+
+    display: -ms-flexbox;
+    -ms-flex-direction: column; /* Elementi accatastati dall'alto verso il basso */
+    
+    background: orangered;
+    width: 60px;
+    height: auto;
+
+    /* Per centrare */
+    top: 50%;
+    left: 50%;
+    margin-left: -30px;
+    margin-top: -20px;
+
+    transform-origin: center;
+    text-align: center;
+    border-radius: 3px;
+
+    z-index: 5;
+}
+@keyframes scaleAnimation {
+    0% {
+        transform: scale3d(1,1,1);
+    }
+    100% {
+        transform: scale3d(9,9,1);
+    }
+}
+
+.best {
+    font-family: Segoe WP;
+    font-size: 5px;
+    height: auto;
+}
+
+#gameOver {
+    font-family: Impact;
+    font-size: 12px;
+    height: auto;
+}
+
+#retry {
+    width: 12px;
+    height: 12px;
+    padding: 1px;
+
+    z-index: 3;
+}
+
+#bird {
+    position: fixed;
+
+    height: auto;
+    width: 4.5vw;
+    min-width: 55px;
+
+    top: 45%;
+    left: 38%;
+
+    z-index: 3;
+}
+
+.moving {
+    position: absolute;
+
+    display: -ms-grid;
+    -ms-grid-rows: 33% 21% 46%;
+    -ms-grid-columns: 8vw;
+    margin-left: 100%; /* Posizione iniziale */
+    height: 100%;
+
+    z-index: 2;
+}
+
+.pipe {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+}
+
+.topPipe {
+    -ms-grid-row: 1;
+    -ms-grid-rows: 1fr 96px;
+}
+
+.hole {
+    -ms-grid-row: 2;
+}
+
+.bottomPipe {
+    -ms-grid-row: 3;
+    -ms-grid-rows: 96px 1fr;
+}
+
+.pipeBodyDown {
+    background: url(/images/pipeBodyDown.png);
+    -ms-grid-row: 1;
+}
+
+.pipeHeadDown {
+    background: url(/images/pipeHeadDown.png);
+    -ms-grid-row: 2;
+}
+
+.pipeHeadUp {
+    background: url(/images/pipeHeadUp.png);
+    -ms-grid-row: 1;
+}
+
+.pipeBodyUp {
+    background: url(/images/pipeBodyUp.png);
+    -ms-grid-row: 2;
+}
+
+.subPipe {
+    background-size: 100% 100%;
+}
