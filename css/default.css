@@ -1,6 +1,6 @@
 ﻿
 #gameArea {
-    background: url(/images/autumn.jpg);
+    background: url(../images/autumn.jpg);
     background-size: cover;
     height: 100%;
 
@@ -46,8 +46,8 @@
     position: fixed;
 
     font-size: 50px;
-    font-family: Segoe WP;
-    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     top: 65%;
     left: 50%;
     transform: translate(-50%, 0%); /* Per centrare */
@@ -60,6 +60,7 @@
     visibility: collapse; /* Visibile al termine della partita */
 
     display: -ms-flexbox;
+    flex-direction: column;
     -ms-flex-direction: column; /* Elementi accatastati dall'alto verso il basso */
     
     background: orangered;
@@ -88,13 +89,15 @@
 }
 
 .best {
-    font-family: Segoe WP;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: -.05px 0 black, 0 .05px black, .05px 0 black, 0 -.05px black;
     font-size: 5px;
     height: auto;
 }
 
 #gameOver {
     font-family: Impact;
+    text-shadow: -.1px 0 black, 0 .1px black, .1px 0 black, 0 -.1px black;
     font-size: 12px;
     height: auto;
 }
@@ -118,14 +121,30 @@
     left: 38%;
 
     z-index: 3;
+
+    /* background: deepskyblue; */
+}
+
+.movingproxy {
+    position: absolute;
+    
+    display: grid;
+    grid-template-rows: 33% 21% 46%;
+    grid-template-columns: 8vw;
+
+    margin-left: 70%; /* Posizione iniziale */
+    height: 100%;
+
+    z-index: 2;
 }
 
 .moving {
     position: absolute;
+    
+    display: grid;
+    grid-template-rows: 33% 21% 46%;
+    grid-template-columns: 8vw;
 
-    display: -ms-grid;
-    -ms-grid-rows: 33% 21% 46%;
-    -ms-grid-columns: 8vw;
     margin-left: 100%; /* Posizione iniziale */
     height: 100%;
 
@@ -133,42 +152,42 @@
 }
 
 .pipe {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .topPipe {
-    -ms-grid-row: 1;
-    -ms-grid-rows: 1fr 96px;
+    grid-row: 1;
+    grid-template-rows: 1fr 96px;
 }
 
 .hole {
-    -ms-grid-row: 2;
+    grid-row: 2;
 }
 
 .bottomPipe {
-    -ms-grid-row: 3;
-    -ms-grid-rows: 96px 1fr;
+    grid-row: 3;
+    grid-template-rows: 96px 1fr;
 }
 
 .pipeBodyDown {
-    background: url(/images/pipeBodyDown.png);
-    -ms-grid-row: 1;
+    background: url(../images/pipeBodyDown.png);
+    grid-row: 1;
 }
 
 .pipeHeadDown {
-    background: url(/images/pipeHeadDown.png);
-    -ms-grid-row: 2;
+    background: url(../images/pipeHeadDown.png);
+    grid-row: 2;
 }
 
 .pipeHeadUp {
-    background: url(/images/pipeHeadUp.png);
-    -ms-grid-row: 1;
+    background: url(../images/pipeHeadUp.png);
+    grid-row: 1;
 }
 
 .pipeBodyUp {
-    background: url(/images/pipeBodyUp.png);
-    -ms-grid-row: 2;
+    background: url(../images/pipeBodyUp.png);
+    grid-row: 2;
 }
 
 .subPipe {

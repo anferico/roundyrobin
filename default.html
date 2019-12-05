@@ -4,54 +4,56 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <title>IUM_Final</title>
+    <title>Roundy Robin</title>
 
     <!-- Riferimenti WinJS -->
-    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
-
+    <link href="winjs/css/ui-dark.css" rel="stylesheet" />
+    <script src="winjs/js/base.js"></script>
+    <script src="winjs/js/ui.js"></script>
+    
     <!-- Riferimenti IUM_Final -->
-    <link href="/css/default.css" rel="stylesheet" />
-    <script src="/js/default.js"></script>
-    <script src="/js/collision.js"></script>
-    <script src="/js/audio.js"></script>
-    <script src="/js/utility.js"></script>
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/utility.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/collision.js"></script>
+    <script src="js/audio.js"></script>
 </head>
 <body onload="prepareGame()">
     <audio id="cip1" preload="auto">
-        <source src="/sounds/cip1.mp3" type="audio/mp3" />
+        <source src="sounds/cip1.mp3" type="audio/mp3" />
     </audio>
     <audio id="cip2" preload="auto">
-        <source src="/sounds/cip2.mp3" type="audio/mp3" />
+        <source src="sounds/cip2.mp3" type="audio/mp3" />
     </audio>
     <audio id="cip3" preload="auto">
-        <source src="/sounds/cip3.mp3" type="audio/mp3" />
+        <source src="sounds/cip3.mp3" type="audio/mp3" />
     </audio>
     <audio id="crash" preload="auto">
-        <source src="/sounds/crash.mp3" type="audio/mp3" />
+        <source src="sounds/crash.mp3" type="audio/mp3" />
     </audio>
     <audio id="progress" preload="auto">
-        <source src="/sounds/score.mp3" type="audio/mp3" />
+        <source src="sounds/score.mp3" type="audio/mp3" />
     </audio>
     <section id="gameArea">
 
         <div id="score">0</div>
         <div id="instructions">
-            <img id="hand" src="/images/tap.png" />
-            <div id="tipText">Tap to start playing.</div>
+            <img id="hand" src="images/tap.png" />
+            <div id="tipText">Tap to start playing</div>
         </div>
 
-        <img id="bird" src="images/robinAlive.png"/>
+        <img id="bird" src="images/robinAlive_resized.png"/>
 
         <div id="gameOverDialog" class="doAnimate">
             <span id="gameOver">Game Over</span>
-            <span class="best">Best: <span id="bestScoreSpan" class="best">0</span></span>
+            <span class="best">Best score: <span id="bestScoreSpan" class="best">0</span></span>
             <div>
-                <img id="retry" src="/images/Retry.png" />
+                <img id="retry" src="images/Retry.png" />
             </div>
         </div>
-        <!--<div class="moving">
+        
+        
+        <!-- <div class="movingproxy">
             <div class="topPipe pipe">
                 <div class="pipeBodyDown subPipe">
 
@@ -70,7 +72,9 @@
 
                 </div>
             </div>
-        </div>-->
+        </div> -->
+        
+        
     </section>
 </body>
 

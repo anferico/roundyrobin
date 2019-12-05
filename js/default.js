@@ -3,10 +3,11 @@
 // http://go.microsoft.com/fwlink/?LinkId=232509
 (function () {
     "use strict";
-
+    
     var app = WinJS.Application;
-    var activation = Windows.ApplicationModel.Activation;
+    //var activation = Windows.ApplicationModel.Activation;
 
+    /**
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -18,6 +19,11 @@
             }
             args.setPromise(WinJS.UI.processAll());
         }
+    };
+    **/
+    
+    app.onactivated = function (args) {
+        args.setPromise(WinJS.UI.processAll());
     };
 
     app.oncheckpoint = function (args) {
@@ -50,7 +56,7 @@ function addPipe() {
     var bodyUp = newDiv(['pipeBodyUp', 'subPipe']);
 
     var rnd = Math.floor((Math.random() * 40) + 15);
-    mov.style.msGridRows = (rnd + '% ') + ('20% ') + ((80 - rnd) + '%');
+    mov.style.gridTemplateRows = (rnd + '% ') + ('20% ') + ((80 - rnd) + '%');
 
     // Aggiungo i nuovi elementi al DOM
     top.appendChild(bodyDown);
@@ -118,12 +124,17 @@ function prepareGame() {
 
     // Gestore del click per il movimento del personaggio
     gameArea.addEventListener('click', clickListener);
+    // document.addEventListener('keyup', (event) => {
+    //     if (event.code === 'Space') {
+    //         clickListener();
+    //     }
+    // });
 }
 
 function resetBird() {
 
     window.clearInterval(birdInterval);
-    bird.src = '/images/robinAlive.png';
+    bird.src = 'images/robinAlive_resized.png';
     moveBirdBy.currentDy = 0;
     updateBird.lastSpeed = 0;
     bird.style.transform = '';
@@ -161,7 +172,7 @@ function clickListener() {
 
 function endGame() {
 
-    bird.src = '/images/robinDead.png';
+    bird.src = 'images/robinDead_resized.png';
     updateBestScore();
 
     // Mostro il gameover (con un po' di ritardo)
