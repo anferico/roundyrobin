@@ -9,4 +9,4 @@ Getting started with **Roundy Robin** is dead simple. First, clone the repositor
 ```bash
 git clone https://github.com/anferico/roundyrobin.git
 ```
-Then, just open [index.html](index.html) with your browser and start playing. Works with Google Chrome, but may not work with other browsers.
+Then, just open [default.html](default.html) with your browser and start playing. Works with Google Chrome, but may not work with other browsers.
